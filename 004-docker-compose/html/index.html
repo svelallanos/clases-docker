@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Modelo didáctico 3D interactivo del corazón humano con Three.js">
+  <title>Corazón Humano 3D Interactivo - Desarrollado por samizalabs.com</title>
+  <link rel="stylesheet" href="style.css">
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.185.1/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.185.1/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div>
+        <span class="eyebrow">ANATOMÍA INTERACTIVA</span>
+        <h1>Corazón Humano <span>3D</span> - Desarrollado por SAMIZALABS</h1>
+        <p>Explora las principales estructuras cardíacas de forma interactiva.</p>
+      </div>
+
+      <div class="top-actions">
+        <button id="btnReset" class="btn secondary">⟳ Restablecer vista</button>
+        <button id="btnLatido" class="btn primary">♥ Pausar latido</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <aside class="panel left-panel">
+        <h2>Estructuras</h2>
+        <p class="hint">Selecciona una parte para resaltarla.</p>
+
+        <div class="structure-list" id="structureList">
+          <button data-part="auriculaDerecha">Aurícula derecha</button>
+          <button data-part="auriculaIzquierda">Aurícula izquierda</button>
+          <button data-part="ventriculoDerecho">Ventrículo derecho</button>
+          <button data-part="ventriculoIzquierdo">Ventrículo izquierdo</button>
+          <button data-part="aorta">Aorta</button>
+          <button data-part="arteriaPulmonar">Arteria pulmonar</button>
+          <button data-part="venaCavaSuperior">Vena cava superior</button>
+          <button data-part="venaCavaInferior">Vena cava inferior</button>
+        </div>
+
+        <div class="legend">
+          <h3>Controles</h3>
+          <p>🖱️ Arrastrar: rotar</p>
+          <p>🔍 Rueda: acercar/alejar</p>
+          <p>👆 Clic: seleccionar estructura</p>
+        </div>
+      </aside>
+
+      <section class="viewer-card">
+        <div id="scene-container"></div>
+
+        <div class="viewer-badge">
+          <span class="status-dot"></span>
+          Modelo 3D interactivo
+        </div>
+
+        <div id="tooltip" class="tooltip"></div>
+      </section>
+
+      <aside class="panel info-panel">
+        <span class="info-label">ESTRUCTURA SELECCIONADA</span>
+        <h2 id="partTitle">Corazón humano</h2>
+        <p id="partDescription">
+          Selecciona una estructura en el modelo 3D o desde el panel izquierdo
+          para conocer su función.
+        </p>
+
+        <div class="info-box">
+          <h3>Función principal</h3>
+          <p id="partFunction">
+            Bombear sangre para mantener el suministro de oxígeno y nutrientes
+            en todo el organismo.
+          </p>
+        </div>
+
+        <div class="color-meaning">
+          <div><span class="swatch red"></span> Sangre oxigenada</div>
+          <div><span class="swatch blue"></span> Sangre con menor oxígeno</div>
+        </div>
+
+        <div class="educational-note">
+          <strong>Nota:</strong>
+          Este es un modelo didáctico simplificado y no reemplaza un modelo anatómico médico.
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
