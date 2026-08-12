@@ -4,7 +4,7 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - .:/usr/share/nginx/html:ro
+      - ./html:/usr/share/nginx/html:ro
     networks:
       - frontend
   
@@ -34,4 +34,6 @@ volumes:
 
 networks:
   frontend:
+    driver: bridge
   backend:
+    driver: bridge
