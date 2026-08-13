@@ -12,10 +12,10 @@ services:
       - mysql_data:/var/lib/mysql
     healthcheck:
       test: ["CMD-SHELL", "mysqladmin ping -h localhost -uroot -p$${MYSQL_ROOT_PASSWORD} --silent"]
-      interval: 3s
-      timeout: 2s
-      retries: 3
-      start_period: 5s
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
 
   adminer:
     image: adminer
